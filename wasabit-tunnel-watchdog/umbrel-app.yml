@@ -1,0 +1,30 @@
+manifestVersion: 1
+id: wasabit-tunnel-watchdog
+category: networking
+name: Tunnel Watchdog
+version: "1.0.0"
+tagline: Revives Cloudflare Tunnel when it doesn't recover on its own
+icon: https://raw.githubusercontent.com/srabuini/umbrel-app-store/main/wasabit-tunnel-watchdog/icon.svg
+description: >-
+  Watches Umbrel's Cloudflare Tunnel app. If the tunnel is left stopped after a
+  power or internet outage (cloudflared started before the network was up and
+  never retried) and the internet connection is back, it restarts the connector
+  container so the tunnel registers again.
+
+
+  It checks cloudflared's /ready metrics endpoint every 3 minutes, waits for DNS
+  to work before acting, and requires two consecutive failures so it doesn't
+  restart on short drops that cloudflared handles by itself.
+releaseNotes: ""
+developer: Wasabit Labs
+website: https://wasabitlabs.com
+dependencies: []
+repo: https://github.com/srabuini/umbrel-app-store
+support: https://github.com/srabuini/umbrel-app-store/issues
+port: 8765
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: Sebas
+submission: ""
